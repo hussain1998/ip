@@ -1,8 +1,67 @@
-## Welcome to GitHub Pages
+# Duke User Guide
+This is a Command Line Interface (CLI) application for managing tasks. It allows users to add and manage their various types of tasks.
 
-You can use the [editor on GitHub](https://github.com/hussain1998/ip/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+## Features
+### Notes about command format:
+- Words in UPPER_CASE are the parameters to be supplied by the user. 
+    - e.g. in `todo DESCRIPTION`, DESCRIPTION is a parameter which can be used 
+      as `todo CS2113T Quiz`.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+### Adding a Todo task : `todo`
+Adds a Todo task to the task list.
+Format: `todo DESCRIPTION`
+Example:
+- `todo Study for midterms`
+
+Expected outcome:
+	
+  `Added: [T][ ] Study for midterms`
+
+### Adding a Deadline task : `deadline`
+Adds a Deadlne task to the task list.
+Format: `deadline DESCRIPTION /by END_TIME`
+
+Example:
+- `deadline Study for midterms /by this thursday`
+
+Expected outcome:
+	
+  `Added: [D][ ] Study for midterms (by: this thursday)`
+
+### Adding a Event task : `event`
+Adds a Event task to the task list.
+Format: `event DESCRIPTION /at EVENT_TIME`
+
+Example:
+- `event Midterms /at this friday`
+
+Expected outcome:
+	
+  `Added: [E][ ] Midterms (at: this friday)`
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ### Markdown
 
