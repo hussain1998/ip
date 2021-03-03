@@ -39,9 +39,26 @@ Expected outcome:
 	
   `Added: [E][ ] Midterms (at: this friday)`
 
+### Displaying tasks: `list`
+Displays all the tasks in the task list.
+Format: `list`
+Expected outcome:
+	
+`1.[D][ ] Cs3235 quiz (by: this friday)
+2.[E][ ] Cs2113t meeting (at: this sunday 10am)
+3.[T][X] Meet my friend`
 
-
-
+### Changing status of a task : `done`
+Marks a task as done.
+Format: `done TASK_NUMBER`
+Example:
+- `done 2`
+Expected outcome:
+`
+1.[D][ ] Cs3235 quiz (by: this friday)
+2.[E][X] Cs2113t meeting (at: this sunday 10am)
+3.[T][X] Meet my friend
+`
 
 
 
