@@ -134,6 +134,7 @@ The tasks in the task list will be automatically stored in a text file when exit
 The tasks will also be automatically loaded into the task list from the text file when Duke starts.
 
 ## Command Summary
+
 Command | Format | Example
 ------- | ------ | -------
 `todo` | `todo DESCRIPTION` | `todo Study for midterms`
