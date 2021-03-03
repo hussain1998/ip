@@ -6,10 +6,20 @@ This is a Command Line Interface (CLI) application for managing tasks. It allows
 - Words in UPPER_CASE are the parameters to be supplied by the user. 
     - e.g. in `todo DESCRIPTION`, DESCRIPTION is a parameter which can be used 
       as `todo CS2113T Quiz`.
-
+- Every task will be displayed in the following format:`[Task_Type][Status] Description`
+    - e.g. `[T][ ] CS2113T Quiz`
+    - 3 Types of task:
+      - Todo: `[T]`
+      - Deadline: `[D]`
+      - Event: `[E]`
+    - 2 Types of statuses:
+      - Completed: `[X]`
+      - Not Complete: `[ ]`
 ### Adding a Todo task : `todo`
 Adds a Todo task to the task list.
+
 Format: `todo DESCRIPTION`
+
 Example:
 - `todo Study for midterms`
 
@@ -19,6 +29,7 @@ Expected outcome:
 
 ### Adding a Deadline task : `deadline`
 Adds a Deadlne task to the task list.
+
 Format: `deadline DESCRIPTION /by END_TIME`
 
 Example:
@@ -30,6 +41,7 @@ Expected outcome:
 
 ### Adding a Event task : `event`
 Adds a Event task to the task list.
+
 Format: `event DESCRIPTION /at EVENT_TIME`
 
 Example:
@@ -41,73 +53,69 @@ Expected outcome:
 
 ### Displaying tasks: `list`
 Displays all the tasks in the task list.
+
 Format: `list`
-Expected outcome:
-	
-`1.[D][ ] Cs3235 quiz (by: this friday)
+
+Expected outcome:	
+```markdown
+1.[D][ ] Cs3235 quiz (by: this friday)
 2.[E][ ] Cs2113t meeting (at: this sunday 10am)
-3.[T][X] Meet my friend`
+3.[T][X] Meet my friend
+```
 
 ### Changing status of a task : `done`
 Marks a task as done.
+
 Format: `done TASK_NUMBER`
+
 Example:
 - `done 2`
+
 Expected outcome:
-`
+```markdown
 1.[D][ ] Cs3235 quiz (by: this friday)
 2.[E][X] Cs2113t meeting (at: this sunday 10am)
 3.[T][X] Meet my friend
-`
+```
+### Removing a task : `delete`
+Deletes a task from the task list.
 
+Format: `delete TASK_NUMBER`
 
+Example:
+- `delete 3`
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-### Markdown
-
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
+Expected outcome:
 ```markdown
-Syntax highlighted code block
+Noted. I've removed this task:
+[T][X] Meet my friend
+```
+### Searching for a keyword : `find`
+Searches for keyword in the description of all the tasks. Keyword is **case-sensitive**.
 
-# Header 1
-## Header 2
-### Header 3
+Format: `find KEYWORD`
 
-- Bulleted
-- List
+Example:
+- `find Cs`
 
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
+Expected outcome:
+```markdown
+[D][ ] Cs3235 quiz (by: this friday)
+[E][X] Cs2113t meeting (at: this sunday 10am)
 ```
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+### Exiting Duke : `bye`
+Exits the program.
 
-### Jekyll Themes
+Format: `bye`
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/hussain1998/ip/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+Expected outcome:
+```markdown
+Bye. Hope to see you again soon!
+```
 
-### Support or Contact
+### Storing and Loading of data
 
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+The tasks in the task list will be automatically stored in a text file when exiting Duke.
+
+The tasks will also be automatically loaded into the task list from the text file when Duke starts.
