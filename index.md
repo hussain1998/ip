@@ -1,7 +1,19 @@
 # Duke User Guide
 This is a Command Line Interface (CLI) application for managing tasks. It allows users to add and manage their various types of tasks.
 
+- [Features](#features)
+    - [Adding Todo](#adding-a-todo-task--todo)
+    - [Adding Deadline](#adding-a-deadline-task--deadline)
+    - [Adding Event](#adding-an-event-task--event)
+    - [Displaying tasks](#displaying-tasks--list)
+    - [Marking task as done](#changing-status-of-a-task--done)
+    - [Removing task](#removing-a-task--delete)
+    - [Finding keyword](Searching-for-a-keyword--find)
+    - [Exiting Duke](#exiting-duke--bye)
+- [Command summary](#command-summary)
+
 ## Features
+
 ### Notes about command format:
 - Words in UPPER_CASE are the parameters to be supplied by the user. 
     - e.g. in `todo DESCRIPTION`, DESCRIPTION is a parameter which can be used 
@@ -15,6 +27,7 @@ This is a Command Line Interface (CLI) application for managing tasks. It allows
     - 2 Types of statuses:
       - Completed: `[X]`
       - Not Complete: `[ ]`
+
 ### Adding a Todo task : `todo`
 Adds a Todo task to the task list.
 
@@ -39,7 +52,7 @@ Expected outcome:
 	
   `Added: [D][ ] Study for midterms (by: this thursday)`
 
-### Adding a Event task : `event`
+### Adding an Event task : `event`
 Adds a Event task to the task list.
 
 Format: `event DESCRIPTION /at EVENT_TIME`
@@ -51,7 +64,7 @@ Expected outcome:
 	
   `Added: [E][ ] Midterms (at: this friday)`
 
-### Displaying tasks: `list`
+### Displaying tasks : `list`
 Displays all the tasks in the task list.
 
 Format: `list`
@@ -119,3 +132,15 @@ Bye. Hope to see you again soon!
 The tasks in the task list will be automatically stored in a text file when exiting Duke.
 
 The tasks will also be automatically loaded into the task list from the text file when Duke starts.
+
+## Command Summary
+Command | Format | Example
+------- | ------ | -------
+`todo` | `todo DESCRIPTION` | `todo Study for midterms`
+`deadline` | `deadline DESCRIPTION /by END_TIME` | `deadline Study for midterms /by this thursday`
+`event` | `event DESCRIPTION /at EVENT_TIME` | `event Midterms /at this friday`
+`list` | `list` | `list`
+`done` | `done TASK_NUMBER` | `done 2`
+`delete` | `delete TASK_NUMBER` | `delete 3`
+`find` | `find KEYWORD` | `find Cs`
+`bye` | `bye` | `bye`
